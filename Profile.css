@@ -450,31 +450,36 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 255, 179, 0.5);
 }
-.achievements-list {
+.achievement-card {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 10px 0;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
 }
 
-.achievement-card {
-  display: flex;
-  align-items: flex-start;
-  background: #1e1e1e;
-  padding: 12px 16px;
-  border-left: 4px solid #00ffaa;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 255, 179, 0.15);
 }
 
 .achievement-card .emoji {
-  font-size: 24px;
-  margin-right: 12px;
-  margin-top: 2px;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .emoji {
+  transform: rotate(10deg) scale(1.2);
 }
 
 .achievement-card p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
