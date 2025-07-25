@@ -1,0 +1,480 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: #f0f0f0;
+  --primary: #00C9FF;
+  --secondary: #333333;
+}
+
+[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --card-bg: #1a1a1a;
+  --primary: #00FF9D;
+  --secondary: #2a2a2a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ============================
+   THEME TOGGLE
+============================ */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ============================
+   LAYOUT CONTAINER
+============================ */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* ============================
+   PROFILE CARD
+============================ */
+.profile-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 240px;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 8px 24px rgba(0, 201, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    height: auto;
+    position: static;
+    max-width: 90%;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ============================
+   PROFILE CONTENT
+============================ */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.profile-card h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.role {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  color: var(--text);
+}
+
+/* ============================
+   BADGE
+============================ */
+.badge {
+  background-color: var(--primary);
+  color: #000;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ============================
+   SOCIAL ICONS
+============================ */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.social-icons i {
+  font-size: 22px;
+  color: var(--text);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-icons a:hover i {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* ============================
+   CTA BUTTONS
+============================ */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.btn {
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: black;
+}
+
+.btn.secondary {
+  background: var(--secondary);
+  color: white;
+  border: 1px solid #444;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 201, 255, 0.2);
+}
+
+/* ============================
+   HERO CONTENT (optional)
+============================ */
+.hero-content {
+  max-width: 700px;
+}
+
+.intro {
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.desc {
+  margin: 1rem 0 2rem;
+  color: #777;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stats div {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stats strong {
+  font-size: 1.5rem;
+  display: block;
+  color: var(--primary);
+}
+
+.stats span {
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+#typed-role {
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--primary);
+  animation: blink 1s infinite;
+  font-weight: 700;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.honor-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.honor-badge i {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: gold;
+}
+.fancy-tabs .info-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.fancy-tabs .tab-btn {
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.fancy-tabs .tab-btn.active,
+.fancy-tabs .tab-btn:hover {
+  background: var(--primary);
+  color: black;
+}
+
+.tab-content {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.exp-item h4,
+.project-item h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.exp-item ul,
+.achievements-list {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.exp-item li,
+.achievements-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.exp-item li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+.achievements-list i {
+  color: gold;
+  margin-right: 0.5rem;
+}
+/* Make body a flex column */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Content wrapper fills available space */
+.page-wrapper {
+  flex: 1;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: var(--bg);
+  color: var(--text);
+  border-top: 1px solid #ccc;
+  margin-top: auto;}
+.footer {
+  margin-top: 2rem; /* space from top content */
+}
+  .portfolio-section {
+  padding: 40px 20px;
+  background-color: #f9f9ff;
+}
+
+.portfolio-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.cert-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.cert-card img,
+.cert-card embed {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.btn.view {
+  background-color: #1976d2;
+}
+
+.btn.download {
+  background-color: #43a047;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.skill-chip {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #00ffb3, #00d4ff);
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0, 255, 179, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.skill-chip:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 179, 0.5);
+}
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: flex-start;
+  background: #1e1e1e;
+  padding: 12px 16px;
+  border-left: 4px solid #00ffaa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card .emoji {
+  font-size: 24px;
+  margin-right: 12px;
+  margin-top: 2px;
+}
+
+.achievement-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
