@@ -50,13 +50,30 @@
         With 3 years of hands-on experience in enterprise applications, I transform business needs into working code.
       </p>
 <div class="info-card fancy-tabs">
-  <div class="info-tabs">
-      <button class="tab-btn" data-tab="skills">🧠 Skills</button>
-    <button class="tab-btn active" data-tab="experience">💼 Experience</button>
-    <button class="tab-btn" data-tab="projects">💻 Projects</button>
-    <button class="tab-btn" data-tab="certifications">📜 Certifications</button>
-    <button class="tab-btn" data-tab="achievements">🏆 Achievements</button>
-  </div>
+<div class="info-tabs">
+  <button class="tab-btn active" onclick="manualSelectTab(0)"> Skills</button>
+  <button class="tab-btn" onclick="manualSelectTab(1)">💼 Experience</button>
+  <button class="tab-btn" onclick="manualSelectTab(2)">💻 Projects</button>
+  <button class="tab-btn" onclick="manualSelectTab(3)">📜 Certifications</button>
+  <button class="tab-btn" onclick="manualSelectTab(4)">🏆 Achievements</button>
+</div>
+<div class="tab-pane" id="skills">
+  <h3>My Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-chip">Java</div>
+      <div class="skill-chip">Spring Boot</div>
+      <div class="skill-chip">REST APIs</div>
+      <div class="skill-chip">MySQL</div>
+      <div class="skill-chip">Hibernate</div>
+      <div class="skill-chip">Agile Methodologies</div>
+      <div class="skill-chip">Git</div>
+      <div class="skill-chip">Problem Solving</div>
+      <div class="skill-chip">Team Collaboration</div>
+      <div class="skill-chip">Docker</div>
+      <div class="skill-chip">AWS (EC2, S3)</div>
+      <div class="skill-chip">CI/CD (Jenkins)</div>
+    </div>
+</div>
 
 <div class="tab-pane active" id="experience">
   <h3>Professional Experience</h3>
@@ -181,20 +198,6 @@
 </div>
 
   
-</div>
-<div class="tab-pane" id="skills">
-  <h3>My Skills</h3>
-  <div class="skills-grid">
-    <div class="skill-chip">Java</div>
-    <div class="skill-chip">Spring Boot</div>
-    <div class="skill-chip">REST APIs</div>
-    <div class="skill-chip">MySQL</div>
-    <div class="skill-chip">Hibernate</div>
-    <div class="skill-chip">Agile Methodologies</div>
-    <div class="skill-chip">Git</div>
-    <div class="skill-chip">Problem Solving</div>
-    <div class="skill-chip">Team Collaboration</div>
-  </div>
 </div>
 
   </section>

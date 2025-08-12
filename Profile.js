@@ -53,4 +53,39 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const panes = document.querySelectorAll(".tab-pane");
+
+  let currentIndex = 0;
+  let autoSwitchInterval;
+  let pauseTimeout;
+
+  function switchTab(index) {
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle("active", i === index);
+      panes[i].classList.toggle("active", i === index);
+    });
+    currentIndex = index;
+  }
+
+  function startAutoSwitch() {
+    autoSwitchInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % tabs.length;
+      switchTab(currentIndex);
+    }, 5000);
+  }
+
+  tabs.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      clearInterval(autoSwitchInterval);
+      clearTimeout(pauseTimeout);
+      switchTab(index);
+      pauseTimeout = setTimeout(startAutoSwitch, 300000); // 5 min pause
+    });
+  });
+
+  switchTab(0);  // show first tab on load
+  startAutoSwitch();
+});
 

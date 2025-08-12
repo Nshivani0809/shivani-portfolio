@@ -526,3 +526,17 @@ footer {
   }
 }
 
+.tab-btn.active {
+  background-color: #00ffae;
+  color: #000;
+  transform: scale(1.05);
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,255,174,0.6);
+}
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
