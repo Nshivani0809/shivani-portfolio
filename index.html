@@ -3,210 +3,416 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shivani Noru – Java Developer</title>
+  <title>Shivani Noru – Java Backend Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Profile.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/regular.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/light.min.css" />   
-
 </head>
 <body>
+   <header >
+    <div class="container header-container">
+     <a href="#" class="logo">
+        <span class="logo-code">&lt;SN/&gt;</span> Shivani Noru
+      </a>
+      <div class="nav-parent">
+        <nav class="nav-menu">
+          <a href="#about" class="nav-link">
+            <i class="fas fa-user"></i> About
+          </a>
+          <a href="#skills" class="nav-link">
+            <i class="fas fa-rocket"></i> Skills
+          </a>
+          <a href="#experience" class="nav-link">
+            <i class="fas fa-briefcase"></i> Experience
+          </a>
+          <a href="#projects" class="nav-link">
+            <i class="fas fa-laptop-code"></i> Projects
+          </a>
+          <a href="#certifications" class="nav-link">
+            <i class="fas fa-certificate"></i> Certifications
+          </a>
+          </nav>
+        
+      </div>
+      <button id="theme-toggle" title="Toggle theme">
+        <i id="theme-icon" class="fa-solid fa-moon"></i>
+      </button>
 
-<button id="theme-toggle" title="Toggle theme">
-  <i id="theme-icon" class="fa-solid fa-moon"></i>
-</button>
-<nav class="navbar"></nav>
+    </div>
+   </header>
+<div class="bg-decor">
+    <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div class="hero-content">
+        <!-- Profile Card -->
+        <div class="profile-card floating">
+          <div style="display: flex;justify-content: center;align-items: center;">
+            <img src="Profile.png" alt="Shivani Noru" class="profile-img" />
+          </div>
+          <div class="badge">✅ Available for work</div>
+          <h2>Shivani Noru</h2>
+          <p class="role">Java Backend Developer</p>
+          <div class="social-icons">
+            <a href="https://github.com/Nshivani0809" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/noru-shivani" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <div class="cta-buttons">
+            <a href="Shivani_Resume.html" download class="btn secondary">Download CV</a>
+            <a href="mailto:shivani.noru@gmail.com" class="btn primary">Contact Me</a>
+          </div>
+        </div>
 
-  <main class="container">
-    <!-- Profile Card -->
-    <section class="profile-card">
-      <img src="Profile.png" alt="Shivani Noru" class="profile-img" />
-      <div class="badge">✅ Available for work</div>
-      <h2>Shivani Noru</h2>
-      <div class="social-icons">
-  <a href="https://github.com/Nshivani0809"><i class="fa-brands fa-github"></i></a>
-  <a href="https://www.linkedin.com/in/noru-shivani"><i class="fa-brands fa-linkedin"></i></a>
-  <a href="#"><i class="fa-brands fa-twitter"></i></a>
-</div>
-    </div>
-       <div class="cta-buttons">
-      <a href="Shivani_Resume.html" download class="btn secondary">Download CV</a>
-      <a href="mailto:shivani.noru@gmail.com" class="btn primary">Contact Me</a>
-    </div>
+        <!-- Hero Text -->
+        <div>
+          <p class="intro">👋 Hello, I'm</p>
+          <h1>
+            <span class="highlight">Shivani Noru</span>
+          </h1>
+          <div class="typewriter">
+            <h2>I'm a <span class="highlight" id="typed-role"></span><span class="cursor">|</span></h2>
+          </div>
+          <p class="desc">
+            I specialize in building efficient, scalable, and clean backend systems using Java and Spring Boot.
+            With 3 years of hands-on experience in enterprise applications, I transform business needs into robust, working code.
+          </p>
+          
+          <div class="code-block">
+            <span class="code-comment">// My development approach</span><br>
+            <span class="code-keyword">public class</span> <span class="code-function">BackendDevelopment</span> {<br>
+            &nbsp;&nbsp;<span class="code-keyword">public</span> <span class="code-keyword">void</span> <span class="code-function">buildScalableSystems</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;System.<span class="code-function">out</span>.println(<span class="code-string">"Clean code + Best practices = Production-ready solutions"</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Hero Content -->
-    <section class="hero-content">
-      <p class="intro">👋 Say Hello</p>
-<h1>
-  I’m <span class="bold">Shivani Noru,<br><span class="highlight" id="typed-role"></span><span class="cursor">|</span></span>
-</h1>
-      <p class="desc">
-        I specialize in building efficient, scalable, and clean backend systems using Java and Spring Boot.<br/>
-        With 3 years of hands-on experience in enterprise applications, I transform business needs into working code.
-      </p>
-<div class="info-card fancy-tabs">
-<div class="info-tabs">
-  <button class="tab-btn active" onclick="manualSelectTab(0)"> Skills</button>
-  <button class="tab-btn" onclick="manualSelectTab(1)">💼 Experience</button>
-  <button class="tab-btn" onclick="manualSelectTab(2)">💻 Projects</button>
-  <button class="tab-btn" onclick="manualSelectTab(3)">📜 Certifications</button>
-  <button class="tab-btn" onclick="manualSelectTab(4)">🏆 Achievements</button>
-</div>
-<div class="tab-pane" id="skills">
-  <h3>My Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-chip">Java</div>
-      <div class="skill-chip">Spring Boot</div>
-      <div class="skill-chip">REST APIs</div>
-      <div class="skill-chip">MySQL</div>
-      <div class="skill-chip">Hibernate</div>
-      <div class="skill-chip">Agile Methodologies</div>
-      <div class="skill-chip">Git</div>
-      <div class="skill-chip">Problem Solving</div>
-      <div class="skill-chip">Team Collaboration</div>
-      <div class="skill-chip">Docker</div>
-      <div class="skill-chip">AWS (EC2, S3)</div>
-      <div class="skill-chip">CI/CD (Jenkins)</div>
-    </div>
-</div>
+    <!-- Navigation Tabs -->
+    <!-- <section class="tabs-container">
+      <div class="info-tabs">
+        <button class="tab-btn active" data-target="skills">
+          <i class="fas fa-rocket"></i> Skills
+        </button>
+        <button class="tab-btn" data-target="experience">
+          <i class="fas fa-briefcase"></i> Experience
+        </button>
+        <button class="tab-btn" data-target="projects">
+          <i class="fas fa-laptop-code"></i> Projects
+        </button>
+        <button class="tab-btn" data-target="certifications">
+          <i class="fas fa-certificate"></i> Certifications
+        </button>
+        <button class="tab-btn" data-target="achievements">
+          <i class="fas fa-trophy"></i> Achievements
+        </button>
+      </div>
+    </section> -->
 
-<div class="tab-pane active" id="experience">
-  <h3>Professional Experience</h3>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-chip"><i class="fa-brands fa-java"></i> Java</div>
+        <div class="skill-chip"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
+        <div class="skill-chip"><i class="fa-solid fa-code"></i> REST APIs</div>
+        <div class="skill-chip"><i class="fa-solid fa-database"></i> MySQL</div>
+        <div class="skill-chip"><i class="fa-solid fa-database"></i> Hibernate</div>
+        <div class="skill-chip"><i class="fa-solid fa-arrows-rotate"></i> Agile</div>
+        <div class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</div>
+        <div class="skill-chip"><i class="fa-solid fa-lightbulb"></i> Problem Solving</div>
+        <div class="skill-chip"><i class="fa-solid fa-people-group"></i> Team Collaboration</div>
+        <div class="skill-chip"><i class="fa-brands fa-docker"></i> Docker</div>
+        <div class="skill-chip"><i class="fa-brands fa-aws"></i> AWS (EC2, S3)</div>
+        <div class="skill-chip"><i class="fa-solid fa-gears"></i> CI/CD (Jenkins)</div>
+      </div>
+    </section>
 
-  <div class="exp-item">
-    <h4>Software Engineer – Retail IT Sols Pvt Ltd <span>2022–Present</span></h4>
-    <ul>
-      <li>Developed and maintained scalable REST APIs using Spring Boot and Java 8.</li>
-      <li>Built backend modules including authentication, customer, and inventory services.</li>
-      <li>Provided L2/L3 production support — incident resolution, root cause analysis, and permanent fixes.</li>
-      <li>Collaborated with cross-functional teams in Agile sprints to deliver high-quality backend solutions.</li>
-    </ul>
-  </div>
-</div>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="exp-item">
+        <h4>Software Engineer – Retail IT Sols Pvt Ltd <span>2022–Present</span></h4>
+        <ul>
+          <li>Developed and maintained scalable REST APIs using Spring Boot and Java 8</li>
+          <li>Built backend modules including authentication, customer, and inventory services</li>
+          <li>Provided L2/L3 production support — incident resolution, root cause analysis, and permanent fixes</li>
+          <li>Collaborated with cross-functional teams in Agile sprints to deliver high-quality backend solutions</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="project-item">
+        <h4>Petrodhar – Petrol Pump Records Management App</h4>
+        <p>Developed production-ready backend with 12+ REST APIs for agent, customer, dealer, and authentication modules. 
+        Deployed on AWS EC2 with Jenkins CI/CD. Served ~15 customers via Play Store before marketing pause.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Jenkins</span>
+          <span class="tech-tag">AWS EC2</span>
+        </div>
+      </div>
 
-    <div class="tab-pane" id="projects">
-  <h3>Featured Projects</h3>
+      <div class="project-item">
+        <h4>Task Manager Web Application</h4>
+        <p>Full-stack productivity tool with secure JWT authentication, CRUD operations, and Railway-hosted MySQL database. 
+        Deployed on Render with live Swagger UI documentation.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">JWT</span>
+          <span class="tech-tag">Swagger</span>
+        </div>
+      </div>
 
-  <div class="project-item">
-    <h4>Petrodhar – Petrol Pump Records Management App</h4>
-    <p>Developed production-ready backend with 12+ REST APIs for agent, customer, dealer, and authentication modules. 
-    Deployed on AWS EC2 with Jenkins CI/CD. Served ~15 customers via Play Store before marketing pause.
-    <br><strong>Stack:</strong> Java, Spring Boot, MySQL, Jenkins, AWS EC2</p>
-  </div>
+      <div class="project-item">
+        <h4>BEV-POS System <em>(In Progress)</em></h4>
+        <p>Retail billing system supporting barcode scanning, tax calculation, and product inventory management.
+        Designed for responsive UI integration. Currently implementing backend APIs and database models.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+      </div>
+    </section>
 
-  <div class="project-item">
-    <h4>Task Manager Web Application</h4>
-    <p>Full-stack productivity tool with secure JWT authentication, CRUD operations, and Railway-hosted MySQL database. 
-    Deployed on Render with live Swagger UI documentation.
-    <br><strong>Stack:</strong> Java, Spring Boot, MySQL (Railway), JWT, Swagger</p>
-  </div>
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img src="https://placehold.co/300x180/333333/00FF9D?text=AWS+Fundamentals" alt="AWS Certificate">
+          <div class="cert-content">
+            <h3>AWS Fundamentals</h3>
+            <a href="#" class="btn view">View Certificate</a>
+          </div>
+        </div>
 
-  <div class="project-item">
-    <h4>POS Billing System <em>(In Progress)</em></h4>
-    <p>Retail billing system supporting barcode scanning, tax calculation, and product inventory management.
-    Designed for responsive UI integration. Currently implementing backend APIs and database models.
-    <br><strong>Stack:</strong> Java, Spring Boot, HTML, CSS, JavaScript</p>
-  </div>
-</div>
+        <div class="cert-card">
+          <img src="https://placehold.co/300x180/333333/00FF9D?text=DSA+in+Java" alt="DSA Java Certificate">
+          <div class="cert-content">
+            <h3>DSA in Java</h3>
+            <a href="#" class="btn view">View Certificate</a>
+          </div>
+        </div>
 
+        <div class="cert-card">
+          <img src="https://placehold.co/300x180/333333/00FF9D?text=HCL+Internship" alt="HCL Certificate">
+          <div class="cert-content">
+            <h3>HCL Internship</h3>
+            <a href="#" class="btn view">View Certificate</a>
+          </div>
+        </div>
 
-<div class="tab-pane" id="certifications">
-  <h2>Certificates</h2>
-  <div class="cert-grid">
-    
-    <!-- Certificate 1 -->
-    <div class="cert-card">
-      <img src="images/AWS.png" alt="AWS Certificate">
-      <h3>AWS Fundamentals</h3>
-      <a href="images/AWS.png" target="_blank" class="btn view">View</a>
-    </div>
+        <div class="cert-card">
+          <img src="https://placehold.co/300x180/333333/00FF9D?text=Microsoft+Virtual" alt="Microsoft Certificate">
+          <div class="cert-content">
+            <h3>Microsoft Virtual</h3>
+            <a href="#" class="btn view">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Certificate 2 -->
-    <div class="cert-card">
-      <img src="images/DSA_JAVA.jpg" alt="DSA Java Certificate">
-      <h3>DSA in Java</h3>
-      <a href="images/DSA_JAVA.jpg" target="_blank" class="btn view">View</a>
-    </div>
-
-    <!-- Certificate 3 -->
-    <div class="cert-card">
-      <img src="images/HCL.jpg" alt="HCL Certificate">
-      <h3>HCL Internship</h3>
-      <a href="images/HCL.jpg" target="_blank" class="btn view">View</a>
-    </div>
-
-    <!-- Certificate 4 -->
-    <div class="cert-card">
-      <img src="images/Microsoft.jpg" alt="Microsoft Certificate">
-      <h3>Microsoft Virtual</h3>
-      <a href="images/Microsoft.jpg" target="_blank" class="btn view">View</a>
-    </div>
-
-    <!-- Certificate 5 -->
-    <div class="cert-card">
-      <img src="images/Python_AI.jpg" alt="Python AI Certificate">
-      <h3>Python + AI</h3>
-      <a href="images/Python_AI.jpg" target="_blank" class="btn view">View</a>
-    </div>
-
-    <!-- Certificate 6 -->
-    <div class="cert-card">
-      <embed src="images/java_basic certificate.pdf" type="application/pdf" width="100%" height="200px">
-      <h3>Java Basics</h3>
-      <a href="images/java_basic certificate.pdf" class="btn download" download>Download</a>
-    </div>
-
-    <!-- Certificate 7 -->
-    <div class="cert-card">
-      <embed src="images/sql_basic certificate.pdf" type="application/pdf" width="100%" height="200px">
-      <h3>SQL Basic</h3>
-      <a href="images/sql_basic certificate.pdf" class="btn download" download>Download</a>
-    </div>
-
-    <!-- Certificate 8 -->
-    <div class="cert-card">
-      <embed src="images/sql_intermediate certificate.pdf" type="application/pdf" width="100%" height="200px">
-      <h3>SQL Intermediate</h3>
-      <a href="images/sql_intermediate certificate.pdf" class="btn download" download>Download</a>
-    </div>
-
-  </div>
-  </div>
-<div class="tab-pane" id="achievements">
-  <div class="achievement-card bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4 rounded-xl mb-4 flex items-start gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-    <span class="emoji text-2xl">🏆</span>
-    <p><strong>Employee of the Month</strong> — Awarded 3 times for outstanding performance in L2/L3 support roles.</p>
-  </div>
-  <div class="achievement-card bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4 rounded-xl mb-4 flex items-start gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-    <span class="emoji text-2xl">🚀</span>
-    <p>Led delivery of critical production issue resolutions under high-pressure SLAs.</p>
-  </div>
-  <div class="achievement-card bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4 rounded-xl mb-4 flex items-start gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-    <span class="emoji text-2xl">📘</span>
-    <p>Mentored new engineers and documented recurring issue patterns.</p>
-  </div>
-  <div class="achievement-card bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4 rounded-xl mb-4 flex items-start gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-    <span class="emoji text-2xl">💡</span>
-    <p>Automated SQL tasks with reusable scripts, saving 15% manual effort.</p>
-  </div>
-</div>
-
-  
-</div>
-
-  </section>
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+      <h2 class="section-title">Achievements</h2>
+      <div class="achievement-card">
+        <span class="emoji">🏆</span>
+        <p><strong>Employee of the Month</strong> — Awarded 3 times for outstanding performance in L2/L3 support roles.</p>
+      </div>
+      <div class="achievement-card">
+        <span class="emoji">🚀</span>
+        <p>Led delivery of critical production issue resolutions under high-pressure SLAs.</p>
+      </div>
+      <div class="achievement-card">
+        <span class="emoji">📘</span>
+        <p>Mentored new engineers and documented recurring issue patterns.</p>
+      </div>
+      <div class="achievement-card">
+        <span class="emoji">💡</span>
+        <p>Automated SQL tasks with reusable scripts, saving 15% manual effort.</p>
+      </div>
+    </section>
   </main>
+
+</div>
   
-<footer class="footer">
-  <p>&copy; 2024 Shivani Noru. All rights reserved.</p>
-  <p class="footer-note">Crafted with ❤️ using HTML, CSS & JavaScript</p>
-</footer>
-  <script src="Profile.js"></script>
+  <footer class="mb-5">
+    <div class="container">
+      <p>&copy; 2024 Shivani Noru. All rights reserved.</p>
+      <p class="footer-note">Crafted using HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const mobileToggle = document.getElementById("mobile-toggle");
+      const closeMenu = document.getElementById("close-menu");
+      const navMenu = document.getElementById("nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+      
+      // Toggle mobile menu
+      mobileToggle.addEventListener("click", function() {
+        navMenu.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+      });
+      
+      // Close mobile menu
+      closeMenu.addEventListener("click", function() {
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+      });
+      
+      // Close menu when clicking on links
+      navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+          navMenu.classList.remove("active");
+          document.body.style.overflow = "auto"; // Re-enable scrolling
+        });
+      });
+      
+      // Close menu when clicking outside of it
+      document.addEventListener('click', function(event) {
+        const isClickInsideNav = navMenu.contains(event.target);
+        const isClickOnToggle = mobileToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+          navMenu.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+    });
+    // Theme Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-icon');
+      const root = document.documentElement;
+
+      // Check for saved theme preference or respect OS preference
+      const savedTheme = localStorage.getItem('theme') || 
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      root.setAttribute('data-theme', savedTheme);
+      icon.classList.toggle('fa-moon', savedTheme === 'light');
+      icon.classList.toggle('fa-sun', savedTheme === 'dark');
+
+      toggleBtn.addEventListener('click', () => {
+        const isDark = root.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        root.setAttribute('data-theme', newTheme);
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
+        
+        // Save preference
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+
+    // Typing Effect
+    const roles = ["Java Developer", "Backend Engineer", "Spring Boot Enthusiast"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingDelay = 100;
+    const typedElement = document.getElementById("typed-role");
+
+    function type() {
+      if (!typedElement) return;
+
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        // Delete character
+        typedElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = 50;
+      } else {
+        // Type character
+        typedElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 100;
+      }
+
+      // Determine next step
+      if (!isDeleting && charIndex === currentRole.length) {
+        // Pause at end of typing
+        typingDelay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        // Move to next role after deleting
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingDelay = 500;
+      }
+
+      setTimeout(type, typingDelay);
+    }
+
+    // Tab functionality
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      
+      // Add click event to tabs
+      tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const targetId = btn.getAttribute("data-target");
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // Remove active class from all buttons
+            tabButtons.forEach(b => b.classList.remove("active"));
+            // Add active class to clicked button
+            btn.classList.add("active");
+            
+            // Scroll to the target section
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Start typing effect
+      type();
+    });
+const mobileToggle = document.getElementById("mobile-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+mobileToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
