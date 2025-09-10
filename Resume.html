@@ -1,125 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shivani Noru – Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f5f9ff;
-      color: #1a1a1a;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-    h1, h2, h3 {
-      color: #003366;
-    }
-    a {
-      color: #0056b3;
-      text-decoration: none;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .section-title {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .contact {
-      margin-bottom: 15px;
-    }
-    .resume-btn {
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .resume-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Backend Developer Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #00C9FF;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #00FF9D;
+        }
+        
+        .header-content h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        /* Left Column */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        /* Right Column */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #00C9FF;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: #00C9FF;
+        }
+        
+        /* Experience & Education Items */
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #00C9FF;
+            border-radius: 50%;
+            background: white;
+        }
+        
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 22px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background: #00C9FF;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .item-subtitle {
+            color: #00C9FF;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .item-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background: #eef5ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            border: 1px solid #00C9FF;
+        }
+        
+        /* Projects */
+        .project {
+            margin-bottom: 20px;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-title i {
+            color: #00C9FF;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        
+        .tech-tag {
+            background: #eef5ff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #2c3e50;
+            border: 1px solid #00C9FF;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .header {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: #00C9FF;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #00C9FF;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Loading Animation */
+        .loader {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Shivani Noru</h1>
-    <p class="contact">📧 <a href="mailto:shivani.noru@gmail.com">shivani.noru@gmail.com</a> | 📞 8790158510 (private)</p>
-    <p>🌐 <a href="https://linkedin.com/in/noru-shivani">LinkedIn</a> | <a href="https://github.com/Nshivani0809">GitHub</a></p>
-
-    <!-- Professional Summary -->
-    <div class="section">
-      <div class="section-title">Professional Summary</div>
-      <p>Software Engineer with over 3 years of hands-on experience in Java backend development and support roles. Skilled in building scalable REST APIs, working with retail systems, and collaborating in Agile teams. Strong problem-solving skills with experience in both enterprise projects and self-initiated applications.</p>
+    <div class="resume-container" id="resume">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="header-content">
+                <h1>Shivani Noru</h1>
+                <h2>Java Backend Developer</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>shivani.noru@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (123) 456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New York, NY</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/shivani-noru</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/shivani-noru</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Professional Summary -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h3>
+                    <p>Experienced Java Backend Developer with 3+ years of expertise in designing and implementing scalable, high-performance applications. Proficient in Spring Boot, REST APIs, and microservices architecture. Passionate about clean code, best practices, and solving complex technical challenges.</p>
+                </section>
+                
+                <!-- Work Experience -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div class="item-title">Software Engineer</div>
+                            <div class="item-date">2022 - Present</div>
+                        </div>
+                        <div class="item-subtitle">Retail IT Solutions Pvt Ltd</div>
+                       <ul>
+                            <li>Developed and maintained scalable REST APIs using Spring Boot and Java 8
+                            <li>Built backend modules including authentication, customer, and inventory services
+                            <li>Provided L2/L3 production support with incident resolution and root cause analysis
+                            <li>Collaborated with cross-functional teams in Agile sprints to deliver high-quality solutions
+                            <li>Designed and developed REST APIs and Spring Boot microservices for inventory, orders, reporting, and user modules.</li> 
+                            <li>Improved API performance by 25% through optimized queries and caching techniques. </li>
+                            <li>Built secure authentication and authorization flows with Spring Security. </li>
+                            <li>Automated deployments using Jenkins CI/CD, reducing manual release effort by 40%.</li>
+                            <li>Debugged and resolved L2/L3 production issues, ensuring 99.9% uptime and smooth customer experience.</li>
+                            <li>Collaborated with frontend (Angular/Ionic) and QA teams in Agile sprints, delivering 95% on-time releases.</li>
+                            <li>Documented functional specifications, technical architecture, and process flows for knowledge transfer and scalability.</li>
+                            <li>Recognized as 3× Employee of the Month for high-quality delivery and bug-fixing contributions.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div class="item-title">Junior Java Developer</div>
+                            <div class="item-date">2020 - 2022</div>
+                        </div>
+                        <div class="item-subtitle">Tech Innovations Inc</div>
+                        <ul>
+                            <li>Developed and maintained enterprise applications using Java EE and Spring Framework</li>
+                            <li>Implemented database solutions using Hibernate and MySQL</li>
+                            <li>Participated in code reviews and contributed to architectural decisions</li>
+                            <li>Reduced application response time by 25% through performance optimization</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Projects -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-code"></i> Projects</h3>
+                    
+                    <div class="project">
+                        <div class="project-title">
+                            <i class="fas fa-project-diagram"></i> Petrodhar - Petrol Pump Management System
+                        </div>
+                        <p>Developed production-ready backend with 12+ REST APIs for agent, customer, dealer, and authentication modules. Deployed on AWS EC2 with Jenkins CI/CD.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">AWS EC2</span>
+                            <span class="tech-tag">Jenkins</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-title">
+                            <i class="fas fa-project-diagram"></i> Task Manager Web Application
+                        </div>
+                        <p>Full-stack productivity tool with secure JWT authentication, CRUD operations, and Railway-hosted MySQL database. Deployed on Render with Swagger UI documentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Swagger</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Skills -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-tools"></i> Technical Skills</h3>
+                    
+                    <h4>Programming Languages</h4>
+                    <div class="skills-container">
+                        <span class="skill">Java</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Python</span>
+                    </div>
+                    
+                    <h4>Frameworks & Technologies</h4>
+                    <div class="skills-container">
+                        <span class="skill">Spring Boot</span>
+                        <span class="skill">Hibernate</span>
+                        <span class="skill">REST APIs</span>
+                        <span class="skill">Microservices</span>
+                        <span class="skill">JUnit</span>
+                        <span class="skill">Maven</span>
+                        <span class="skill">Docker</span>
+                    </div>
+                    
+                    <h4>Databases</h4>
+                    <div class="skills-container">
+                        <span class="skill">MySQL</span>
+                        <span class="skill">PostgreSQL</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">Redis</span>
+                    </div>
+                    
+                    <h4>Tools & Platforms</h4>
+                    <div class="skills-container">
+                        <span class="skill">Git</span>
+                        <span class="skill">Jenkins</span>
+                        <span class="skill">AWS</span>
+                        <span class="skill">Docker</span>
+                        <span class="skill">IntelliJ IDEA</span>
+                        <span class="skill">Postman</span>
+                        <span class="skill">Linux</span>
+                    </div>
+                </section>
+                
+                <!-- Education -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div class="item-title">Master of Computer Applications</div>
+                            <div class="item-date">2017 - 2020</div>
+                        </div>
+                        <div class="item-subtitle">University of Technology</div>
+                        <p>GPA: 3.8/4.0</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div class="item-title">Bachelor of Science in Computer Science</div>
+                            <div class="item-date">2014 - 2017</div>
+                        </div>
+                        <div class="item-subtitle">State University</div>
+                        <p>GPA: 3.6/4.0</p>
+                    </div>
+                </section>
+                
+                <!-- Certifications -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                    
+                    <ul>
+                        <li>AWS Certified Developer - Associate</li>
+                        <li>Spring Professional Certification</li>
+                        <li>Oracle Java SE 8 Programmer</li>
+                        <li>Docker Certified Associate</li>
+                    </ul>
+                </section>
+                
+                <!-- Languages -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-language"></i> Languages</h3>
+                    
+                    <ul>
+                        <li>English (Fluent)</li>
+                        <li>Spanish (Intermediate)</li>
+                        <li>Hindi (Native)</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast no-print" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Resume downloaded successfully!</span>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons no-print">
+        <button class="btn btn-primary" onclick="window.print()">
+            <i class="fas fa-print"></i> Print Resume
+        </button>
+        <button class="btn btn-secondary" onclick="downloadResume()" id="downloadBtn">
+            <i class="fas fa-download"></i> Download PDF
+            <div class="loader" id="loader"></div>
+        </button>
     </div>
 
-    <!-- Technical Skills -->
-    <div class="section">
-      <div class="section-title">Technical Skills</div>
-      <ul>
-        <li>Languages: Java, SQL, Python (with AI basics)</li>
-        <li>Technologies: Spring Boot, REST APIs, Oracle Retail, Power BI, Git, Linux</li>
-        <li>Tools: Cherwell, JIRA, Agile, Jenkins</li>
-        <li>Cloud: AWS (hands-on through certification participation)</li>
-      </ul>
-    </div>
-
-    <!-- Certifications -->
-    <div class="section">
-      <div class="section-title">Certifications</div>
-      <ul>
-        <li>Java – HackerRank</li>
-        <li>SQL – HackerRank</li>
-        <li>Data Structures and Algorithms in Java – Let'sUpgrade</li>
-        <li>Python with AI</li>
-        <li>Microsoft SkillSet – Business Intelligence using Power BI</li>
-        <li>Amazon – AWS Participation Certificate</li>
-      </ul>
-    </div>
-
-    <!-- Work Experience -->
-    <div class="section">
-      <div class="section-title">Work Experience</div>
-      <p><strong>Software Engineer – Retail IT Sols Pvt Ltd (2022–Present)</strong></p>
-      <ul>
-        <li>Developed and maintained backend modules using Java and Spring Boot.</li>
-        <li>Provided L2/L3 support for retail enterprise applications.</li>
-        <li>Collaborated with cross-functional teams in Agile sprints.</li>
-        <li>Built scalable REST APIs for customer and Agent services.</li>
-        <li>Resolved production issues and implemented preventive measures.</li>
-      </ul>
-    </div>
-
-    <!-- Personal Projects -->
-    <div class="section">
-      <div class="section-title">Personal Projects</div>
-      <ul>
-        <li><strong>Task Manager App</strong> – CRUD app with login/authentication, dashboard metrics. <br> <em>Stack:</em> Java, Spring Boot, MySQL.</li>
-        <li><strong>Portfolio Website</strong> – Personal portfolio with dark/light mode, responsive design. <br> <em>Stack:</em> HTML, CSS, JavaScript, GitHub Pages. <a href="https://nshivani0809.github.io/shivani-portfolio/">Live</a></li>
-        <li><strong>Beverage POS System</strong> (In Progress) – Retail POS with tax calculation, barcode scanning, and product management. <br> <em>Stack:</em> Java, Spring Boot, MySQL, HTML</li>
-      </ul>
-    </div>
-
-    <!-- Education -->
-    <div class="section">
-      <div class="section-title">Education</div>
-      <p><strong>Bachelor of Technology in Computer Science</strong><br>Megha Institute of Engineering and Technology for Women, Hyderabad – July 2022</p>
-    </div>
-  </div>
+    <script>
+        function downloadResume() {
+            // Show loading animation
+            const downloadBtn = document.getElementById('downloadBtn');
+            const loader = document.getElementById('loader');
+            const btnText = downloadBtn.querySelector('i').nextSibling;
+            
+            downloadBtn.disabled = true;
+            loader.style.display = 'block';
+            btnText.textContent = ' Generating PDF...';
+            
+            // Create PDF from HTML content
+            const element = document.getElementById('resume');
+            const opt = {
+                margin: 10,
+                filename: 'Shivani_Noru_Java_Developer_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Show success toast
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                
+                // Reset button state
+                setTimeout(() => {
+                    downloadBtn.disabled = false;
+                    loader.style.display = 'none';
+                    btnText.textContent = ' Download PDF';
+                    
+                    // Hide toast after 3 seconds
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                }, 1000);
+            });
+        }
+        
+        console.log("Java Backend Developer Resume Template loaded successfully!");
+    </script>
 </body>
 </html>

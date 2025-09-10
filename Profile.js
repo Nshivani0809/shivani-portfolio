@@ -89,3 +89,69 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoSwitch();
 });
 
+ document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create form data object
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+            formData.append('_subject', 'New Contact Form Submission from Portfolio');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Send form data using Fetch API
+            fetch('https://formsubmit.co/ajax/shivani.noru@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show success message
+                showPopup();
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again later.');
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Show popup function
+        function showPopup() {
+            document.getElementById('confirmationPopup').classList.add('active');
+        }
+        
+        // Close popup function
+        function closePopup() {
+            document.getElementById('confirmationPopup').classList.remove('active');
+        }
+        
+        // Close popup when clicking outside
+        document.getElementById('confirmationPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
